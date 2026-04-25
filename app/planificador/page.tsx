@@ -10,7 +10,7 @@ export default function Home() {
   const [mostrarLoginAnxo, setMostrarLoginAnxo] = useState(false);
 
   const handleLoginAnxo = () => {
-    if (password === "cambiar") {
+    if (password === "comer") {
       setUsuario("anxo");
       setErrorLogin(false);
     } else {
@@ -46,7 +46,7 @@ export default function Home() {
                   onClick={() => setMostrarLoginAnxo(true)}
                   className="w-full py-4 rounded-xl font-bold bg-green-600 text-white hover:bg-green-700 transition-colors shadow-lg"
                 >
-                  👑 Entrar como Anxo
+                  👑 Entrar como Anxo e Andrea
                 </button>
               </>
             ) : (

@@ -18,9 +18,14 @@ export async function loadAnxoData() {
   return null;
 }
 
-export async function saveAnxoData(menu: any, marcados: string[]) {
+// Engadimos pratosMarcados como terceiro parámetro (cun valor por defecto para evitar erros)
+export async function saveAnxoData(
+  menu: any,
+  marcados: string[],
+  pratosMarcados: string[] = [],
+) {
   try {
-    const dataToSave = JSON.stringify({ menu, marcados });
+    const dataToSave = JSON.stringify({ menu, marcados, pratosMarcados });
     fs.writeFileSync(dataFilePath, dataToSave, "utf-8");
     return { success: true };
   } catch (error) {

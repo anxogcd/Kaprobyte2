@@ -1,6 +1,6 @@
 "use client";
 
-import { loadAnxoData, saveAnxoData } from "@/app/actions/session"; // Importamos las acciones del backend
+import { loadAnxoData, saveAnxoData } from "@/app/actions/session";
 import menuData from "@/app/data/menus.json";
 import { useEffect, useState } from "react";
 
@@ -64,6 +64,7 @@ export default function RandomMenuSection({
 }) {
   const [menu, setMenu] = useState<ResultadoMenu | null>(null);
   const [marcados, setMarcados] = useState<string[]>([]);
+  const [pratosMarcados, setPratosMarcados] = useState<string[]>([]); // Novo estado para pratos
   const [cargando, setCargando] = useState(true);
 
   // 1. Cargar datos iniciales según el tipo de usuario
@@ -71,16 +72,15 @@ export default function RandomMenuSection({
     const inicializarDatos = async () => {
       setCargando(true);
       if (usuario === "anxo") {
-        // Backend de Anxo
         const data = await loadAnxoData();
         if (data && data.menu) {
           setMenu(data.menu);
           setMarcados(data.marcados || []);
+          setPratosMarcados(data.pratosMarcados || []); // Recuperamos os pratos marcados
         } else {
           generarYGuardarNuevoMenu();
         }
       } else {
-        // LocalStorage para Invitado
         const menuGuardado = localStorage.getItem("menuSemanal");
         const marcadosGuardados = localStorage.getItem("ingredientesMarcados");
         if (menuGuardado) {
@@ -96,42 +96,59 @@ export default function RandomMenuSection({
     inicializarDatos();
   }, [usuario]);
 
-  // 2. Función para generar un nuevo menú y guardarlo donde toque
+  // 2. Función para generar un nuevo menú y guardarlo
   const generarYGuardarNuevoMenu = async () => {
     const nuevoMenu = xerarMenuSemanal();
     setMenu(nuevoMenu);
     setMarcados([]);
+    setPratosMarcados([]); // Reset de pratos
 
     if (usuario === "anxo") {
-      await saveAnxoData(nuevoMenu, []);
+      await saveAnxoData(nuevoMenu, [], []);
     } else {
       localStorage.setItem("menuSemanal", JSON.stringify(nuevoMenu));
       localStorage.setItem("ingredientesMarcados", JSON.stringify([]));
     }
   };
 
-  // 3. Función para tachar ingredientes y guardar el progreso
+  // 3. Función para tachar ingredientes
   const toggleMarcado = async (nomeIngrediente: string) => {
-    let nuevaListaMarcados: string[] = [];
+    // 1. Calculamos a nova lista de forma síncrona
+    const nuevaListaMarcados = marcados.includes(nomeIngrediente)
+      ? marcados.filter((item) => item !== nomeIngrediente)
+      : [...marcados, nomeIngrediente];
 
-    setMarcados((prev) => {
-      nuevaListaMarcados = prev.includes(nomeIngrediente)
-        ? prev.filter((item) => item !== nomeIngrediente)
-        : [...prev, nomeIngrediente];
+    // 2. Actualizamos o estado visual de React
+    setMarcados(nuevaListaMarcados);
 
-      // Si es invitado, guardamos síncronamente en localStorage
-      if (usuario === "invitado") {
-        localStorage.setItem(
-          "ingredientesMarcados",
-          JSON.stringify(nuevaListaMarcados),
-        );
-      }
-      return nuevaListaMarcados;
-    });
+    // 3. Gardamos onde corresponda usando a variable xa calculada
+    if (usuario === "invitado") {
+      localStorage.setItem(
+        "ingredientesMarcados",
+        JSON.stringify(nuevaListaMarcados),
+      );
+    }
 
-    // Si es Anxo, enviamos el menú actual y la lista nueva al backend de Next.js
     if (usuario === "anxo" && menu) {
-      await saveAnxoData(menu, nuevaListaMarcados);
+      await saveAnxoData(menu, nuevaListaMarcados, pratosMarcados);
+    }
+  };
+
+  // 4. NOVA Función: Marcar/Desmarcar pratos (Só para Anxo)
+  const togglePrato = async (tituloPrato: string) => {
+    if (usuario !== "anxo") return;
+
+    // 1. Calculamos a nova lista de forma síncrona
+    const novaListaPratos = pratosMarcados.includes(tituloPrato)
+      ? pratosMarcados.filter((t) => t !== tituloPrato)
+      : [...pratosMarcados, tituloPrato];
+
+    // 2. Actualizamos o estado visual de React
+    setPratosMarcados(novaListaPratos);
+
+    // 3. Enviamos a nova lista ao servidor xunto co resto de datos
+    if (menu) {
+      await saveAnxoData(menu, marcados, novaListaPratos);
     }
   };
 
@@ -159,53 +176,86 @@ export default function RandomMenuSection({
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          {/* XANTARES */}
           <div className="space-y-6">
             <h3 className="text-xl font-black text-green-600 uppercase tracking-widest ml-4">
               Xantares
             </h3>
-            {menu.comidas.map((item, idx) => (
-              <div key={idx} className="nm-flat p-6 rounded-4xl">
-                <h4 className="text-lg font-bold text-slate-800 mb-3">
-                  {item.title}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {item.ingredients.map((ing, i) => (
-                    <span
-                      key={i}
-                      className="nm-inset text-[10px] font-bold text-green-600 px-3 py-1 rounded-lg bg-green-500/10"
-                    >
-                      {ing}
-                    </span>
-                  ))}
+            {menu.comidas.map((item, idx) => {
+              const pratoMarcado = pratosMarcados.includes(item.title);
+              return (
+                <div
+                  key={idx}
+                  onClick={() => togglePrato(item.title)}
+                  className={`nm-flat p-6 rounded-4xl transition-all duration-300 ${
+                    usuario === "anxo" ? "cursor-pointer select-none" : ""
+                  } ${pratoMarcado ? "ring-2 ring-orange-500 bg-orange-500/5 opacity-80" : ""}`}
+                >
+                  <h4
+                    className={`text-lg font-bold mb-3 ${pratoMarcado ? "text-orange-600" : "text-slate-800"}`}
+                  >
+                    {item.title}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {item.ingredients.map((ing, i) => (
+                      <span
+                        key={i}
+                        className={`nm-inset text-[10px] font-bold px-3 py-1 rounded-lg ${
+                          pratoMarcado
+                            ? "text-orange-600 bg-orange-500/10"
+                            : "text-green-600 bg-green-500/10"
+                        }`}
+                      >
+                        {ing}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
+          {/* CEAS */}
           <div className="space-y-6">
             <h3 className="text-xl font-black text-green-600 uppercase tracking-widest ml-4">
               Senas
             </h3>
-            {menu.cenas.map((item, idx) => (
-              <div key={idx} className="nm-flat p-6 rounded-4xl">
-                <h4 className="text-lg font-bold text-slate-800 mb-3">
-                  {item.title}
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {item.ingredients.map((ing, i) => (
-                    <span
-                      key={i}
-                      className="nm-inset text-[10px] font-bold text-green-600 px-3 py-1 rounded-lg bg-blue-500/10"
-                    >
-                      {ing}
-                    </span>
-                  ))}
+            {menu.cenas.map((item, idx) => {
+              const pratoMarcado = pratosMarcados.includes(item.title);
+              return (
+                <div
+                  key={idx}
+                  onClick={() => togglePrato(item.title)}
+                  className={`nm-flat p-6 rounded-4xl transition-all duration-300 ${
+                    usuario === "anxo" ? "cursor-pointer select-none" : ""
+                  } ${pratoMarcado ? "ring-2 ring-orange-500 bg-orange-500/5 opacity-80" : ""}`}
+                >
+                  <h4
+                    className={`text-lg font-bold mb-3 ${pratoMarcado ? "text-orange-600" : "text-slate-800"}`}
+                  >
+                    {item.title}
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {item.ingredients.map((ing, i) => (
+                      <span
+                        key={i}
+                        className={`nm-inset text-[10px] font-bold px-3 py-1 rounded-lg ${
+                          pratoMarcado
+                            ? "text-orange-600 bg-orange-500/10"
+                            : "text-blue-600 bg-blue-500/10"
+                        }`}
+                      >
+                        {ing}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
+        {/* LISTA DA COMPRA */}
         <div className="nm-inset p-8 rounded-[2.5rem] mb-12">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
             <h3 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
