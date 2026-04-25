@@ -77,7 +77,7 @@ export default function RootLayout({
             {/* Engadimos nm-flat ao footer para pechar o deseño con coherencia */}
             <div className="nm-flat rounded-2xl py-10 text-center">
               <p className="font-medium text-slate-600">
-                © 2024{" "}
+                © 2026{" "}
                 <span className="text-orange-600 font-bold">Kaprobyte</span>.
                 <span className="italic ml-2 text-slate-500">
                   Aliméntate ben para non ser un cocherito.

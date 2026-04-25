@@ -46,7 +46,7 @@ export default function Home() {
                   onClick={() => setMostrarLoginAnxo(true)}
                   className="w-full py-4 rounded-xl font-bold bg-green-600 text-white hover:bg-green-700 transition-colors shadow-lg"
                 >
-                  👑 Entrar como Anxo e Andrea
+                  👑 Entrar como Andrea e Anxo
                 </button>
               </>
             ) : (

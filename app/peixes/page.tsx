@@ -136,7 +136,7 @@ export default function SeasonalFish() {
             {/* SECCIÓN PEIXE AZUL */}
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-blue-500/70 text-right pr-2">
-                Peixe Azul 🐟
+                Peixe Asul 🐟
               </span>
               <div className="flex flex-wrap justify-center md:justify-end gap-3">
                 {blue.map((item) => (
