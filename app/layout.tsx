@@ -40,7 +40,7 @@ export default function RootLayout({
                 </li>
                 <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
                   <a href="/froitas">Froitas</a>
-                </li>{" "}
+                </li>
                 <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
                   <a href="/peixes">Peixes</a>
                 </li>

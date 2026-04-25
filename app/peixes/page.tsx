@@ -126,24 +126,50 @@ export default function SeasonalFish() {
               Tempada Local
             </span>
             <h3 className="text-3xl font-black text-slate-800">
-              Froitas de <span className="text-green-700">{name}</span>
+              Peixes de <span className="text-green-700">{name}</span>
             </h3>
             <p className="text-slate-500 mt-2 text-sm font-medium">
               Consumir o que toca é máis san e sostible.
             </p>
           </div>
-
-          {/* Lista de Froitas Neumórfica */}
-          <div className="flex flex-wrap justify-center md:justify-end gap-3 max-w-md">
-            {blue.map((fish) => (
-              <div
-                key={fish}
-                className="nm-inset px-5 py-3 rounded-2xl text-slate-700 font-bold text-sm flex items-center gap-2"
-              >
-                <span className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.8)]" />
-                {fish}
+          <div className="flex flex-col gap-8 max-w-md ml-auto">
+            {/* SECCIÓN PEIXE AZUL */}
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-black uppercase tracking-widest text-blue-500/70 text-right pr-2">
+                Peixe Azul
+              </span>
+              <div className="flex flex-wrap justify-center md:justify-end gap-3">
+                {blue.map((item) => (
+                  <div
+                    key={item}
+                    className="nm-inset px-5 py-3 rounded-2xl text-slate-700 font-bold text-sm flex items-center gap-2"
+                  >
+                    {/* Punto azul eléctrico para o peixe azul */}
+                    <span className="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
+                    {item}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* SECCIÓN PEIXE BRANCO */}
+            <div className="flex flex-col gap-3">
+              <span className="text-xs font-black uppercase tracking-widest text-slate-400 text-right pr-2">
+                Peixe Branco
+              </span>
+              <div className="flex flex-wrap justify-center md:justify-end gap-3">
+                {white.map((item) => (
+                  <div
+                    key={item}
+                    className="nm-inset px-5 py-3 rounded-2xl text-slate-600 font-bold text-sm flex items-center gap-2"
+                  >
+                    {/* Punto branco/prata con brillo suave para o peixe branco */}
+                    <span className="w-2 h-2 bg-slate-200 rounded-full shadow-[0_0_8px_rgba(226,232,240,1)] border border-slate-300" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
