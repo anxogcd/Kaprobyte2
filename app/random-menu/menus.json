@@ -1,0 +1,309 @@
+{
+  "comidas": [
+    {
+      "title": "Jiso de rape con pementos",
+      "ingredients": ["rape", "pementos"]
+    },
+    {
+      "title": "Pescada á prancha con ensalada",
+      "ingredients": ["pescada", "ensalada"]
+    },
+    {
+      "title": "Salmón á prancha con espárrajos verdes",
+      "ingredients": ["salmón", "espárrajos"]
+    },
+    {
+      "title": "Xarrete cosido con verdura de col",
+      "ingredients": ["xarrete", "col"]
+    },
+    {
+      "title": "Luras á prancha con pementos",
+      "ingredients": ["luras", "pementos"]
+    },
+    {
+      "title": "Peixe branco á prancha con tomate á prancha con ourejo",
+      "ingredients": ["peixe branco", "tomate", "ourejo"]
+    },
+    {
+      "title": "Salmón á prancha con ensalada",
+      "ingredients": ["salmón", "ensalada"]
+    },
+    {
+      "title": "Peituja de polo á prancha con jaspacho",
+      "ingredients": ["polo", "tomate", "cojombro", "allo"]
+    },
+    {
+      "title": "Lubina ao forno con pementos",
+      "ingredients": ["lubina", "pementos"]
+    },
+    {
+      "title": "Peituja de polo á prancha con calabasín",
+      "ingredients": ["polo", "calabasín"]
+    },
+    {
+      "title": "Lombo á prancha con ensalada e sebola",
+      "ingredients": ["lombo", "ensalada", "sebola"]
+    },
+    {
+      "title": "Peixe asul á prancha ou frito con ensalada",
+      "ingredients": ["peixe asul", "ensalada"]
+    },
+    {
+      "title": "Chuleta á prancha con ensalada e olivas",
+      "ingredients": ["chuleta", "ensalada", "olivas"]
+    },
+    {
+      "title": "Rodaballo á prancha con espárrajos verdes",
+      "ingredients": ["rodaballo", "espárrajos"]
+    },
+    {
+      "title": "Luras á prancha con leituja",
+      "ingredients": ["luras", "leituja"]
+    },
+    {
+      "title": "Peituja de polo á prancha con tomate á prancha con ourejo",
+      "ingredients": ["polo", "tomate", "ourejo"]
+    },
+    {
+      "title": "Dorada ao forno con champiñóns",
+      "ingredients": ["dorada", "champiñóns"]
+    },
+    {
+      "title": "Peituja de polo á prancha con espárrajos e olivas",
+      "ingredients": ["polo", "espárrajos", "olivas"]
+    },
+    {
+      "title": "Polo ao forno con espárrajos verdes",
+      "ingredients": ["polo", "espárrajos"]
+    },
+    {
+      "title": "Luras á prancha con tomate á prancha con ourejo",
+      "ingredients": ["luras", "tomate", "ourejo"]
+    },
+    {
+      "title": "Pescada con sopa de verduras",
+      "ingredients": ["pescada", "senoura", "porro", "apio"]
+    },
+    {
+      "title": "Dorada ao forno con tomate á prancha con ourejo",
+      "ingredients": ["dorada", "tomate", "ourejo"]
+    },
+    {
+      "title": "Peituja de polo á prancha con ensalada e olivas",
+      "ingredients": ["polo", "ensalada", "olivas"]
+    },
+    {
+      "title": "Peixe branco á prancha con champiñóns ou funjos",
+      "ingredients": ["peixe branco", "champiñóns"]
+    },
+    {
+      "title": "Bacallau con seboliño e espárrajos verdes á prancha",
+      "ingredients": ["bacallau", "seboliño", "espárrajos"]
+    },
+    {
+      "title": "Peixe branco frito ou á prancha con ensalada con sebola",
+      "ingredients": ["peixe branco", "ensalada", "sebola"]
+    },
+    {
+      "title": "Polo ao forno con champiñóns",
+      "ingredients": ["polo", "champiñóns"]
+    },
+    {
+      "title": "Rape con champiñóns",
+      "ingredients": ["rape", "champiñóns"]
+    },
+    {
+      "title": "Peixe asul á prancha ou frito con espárrajos á prancha",
+      "ingredients": ["peixe asul", "espárrajos"]
+    },
+    {
+      "title": "Luras á prancha ou jisadas con espárrajos verdes á prancha",
+      "ingredients": ["luras", "espárrajos"]
+    },
+    {
+      "title": "Peituja de polo á prancha con champiñóns ou funjos ao allillo",
+      "ingredients": ["polo", "champiñóns", "allo"]
+    },
+    {
+      "title": "Polo á prancha con pisto de verduras",
+      "ingredients": [
+        "polo",
+        "calabasín",
+        "pataca",
+        "berenjena",
+        "tomate",
+        "ovo"
+      ]
+    },
+    {
+      "title": "Pescada á prancha con pementos á prancha",
+      "ingredients": ["pescada", "pementos"]
+    },
+    {
+      "title": "Polo ao forno con espinacas rehojadas con allo",
+      "ingredients": ["polo", "espinacas", "allo"]
+    },
+    {
+      "title": "Peixe asul á prancha ou frito con champiñóns ou funjos",
+      "ingredients": ["peixe asul", "champiñóns"]
+    },
+    {
+      "title": "Peixe asul á prancha ou frito con pementos",
+      "ingredients": ["peixe asul", "pementos"]
+    },
+    {
+      "title": "Lubina ao forno con ensalada",
+      "ingredients": ["lubina", "ensalada"]
+    },
+    {
+      "title": "Lombo á prancha con ensalada e olivas",
+      "ingredients": ["lombo", "ensalada", "olivas"]
+    },
+    {
+      "title": "Rape cosido con espárrajos verdes á prancha",
+      "ingredients": ["rape", "espárrajos"]
+    },
+    {
+      "title": "Lubina ao forno con champiñóns rehojados",
+      "ingredients": ["lubina", "champiñóns"]
+    },
+    {
+      "title": "Chuleta á prancha con sopa de verduras",
+      "ingredients": ["chuleta", "senoura", "porro", "apio"]
+    },
+    {
+      "title": "Polo ao forno con sopa de verduras",
+      "ingredients": ["polo", "senoura", "porro", "apio"]
+    },
+    {
+      "title": "Polo ao forno con verdura de col",
+      "ingredients": ["polo", "col"]
+    },
+    {
+      "title": "Chocos jisados con berenjena e sebola",
+      "ingredients": ["chocos", "berenjena", "sebola"]
+    }
+  ],
+  "cenas": [
+    {
+      "title": "Brócoli con xamón e allo",
+      "ingredients": ["brócoli", "xamón", "allo"]
+    },
+    {
+      "title": "Froita de tempada con iogur e froitos secos",
+      "ingredients": ["froita", "iogur", "froitos secos"]
+    },
+    {
+      "title": "Tomate con bonito e sebola",
+      "ingredients": ["tomate", "bonito", "sebola"]
+    },
+    {
+      "title": "Revolto de espárrajos con pavo",
+      "ingredients": ["espárrajos", "pavo", "ovo"]
+    },
+    {
+      "title": "Queixo con froita de tempada e froitos secos",
+      "ingredients": ["queixo", "froita", "froitos secos"]
+    },
+    {
+      "title": "Ensalada, sebola, ovo e ajuacate",
+      "ingredients": ["ensalada", "sebola", "ovo", "ajuacate"]
+    },
+    {
+      "title": "Brócoli con allo, espinacas e iogur",
+      "ingredients": ["brócoli", "allo", "espinacas", "iogur"]
+    },
+    {
+      "title": "Jaspacho e tortilla fransesa",
+      "ingredients": ["tomate", "cojombro", "allo", "ovo"]
+    },
+    {
+      "title": "Mexillóns con tomate á prancha",
+      "ingredients": ["mexillóns", "tomate"]
+    },
+    {
+      "title": "Tortilla fransesa con froita de tempada",
+      "ingredients": ["ovo", "froita"]
+    },
+    {
+      "title": "Froita de tempada con froitos secos e tortilla fransesa",
+      "ingredients": ["froita", "froitos secos", "ovo"]
+    },
+    {
+      "title": "Queixo con pavo e froita de tempada",
+      "ingredients": ["queixo", "pavo", "froita"]
+    },
+    {
+      "title": "Mexillóns con champiñóns",
+      "ingredients": ["mexillóns", "champiñóns"]
+    },
+    {
+      "title": "Tortilla fransesa con xamón",
+      "ingredients": ["ovo", "xamón"]
+    },
+    {
+      "title": "Espárrajos, ovo, olivas e iogur",
+      "ingredients": ["espárrajos", "ovo", "olivas", "iogur"]
+    },
+    {
+      "title": "Ajuacate, tomate e bonito",
+      "ingredients": ["ajuacate", "tomate", "bonito"]
+    },
+    {
+      "title": "Champiñóns con camaróns ao allillo",
+      "ingredients": ["champiñóns", "camaróns", "allo"]
+    },
+    {
+      "title": "Ajuacate con espárrajos e camaróns",
+      "ingredients": ["ajuacate", "espárrajos", "camaróns"]
+    },
+    {
+      "title": "Tortilla fransesa e bonito",
+      "ingredients": ["ovo", "bonito"]
+    },
+    {
+      "title": "Brócoli con ovo",
+      "ingredients": ["brócoli", "ovo"]
+    },
+    {
+      "title": "Tomate con olivas e bonito",
+      "ingredients": ["tomate", "olivas", "bonito"]
+    },
+    {
+      "title": "Mexillóns con espárrajos e olivas",
+      "ingredients": ["mexillóns", "espárrajos", "olivas"]
+    },
+    {
+      "title": "Salteado de ovos, champiñóns e camaróns",
+      "ingredients": ["ovo", "champiñóns", "camaróns"]
+    },
+    {
+      "title": "Tortilla fransesa, masá asada e froita de tempada",
+      "ingredients": ["ovo", "masá", "froita"]
+    },
+    {
+      "title": "Ensalada, sebola, tomate e xamón",
+      "ingredients": ["ensalada", "sebola", "tomate", "xamón"]
+    },
+    {
+      "title": "Tortilla fransesa con froita de tempada e iogur",
+      "ingredients": ["ovo", "froita", "iogur"]
+    },
+    {
+      "title": "Brócoli con camaróns e allo",
+      "ingredients": ["brócoli", "camaróns", "allo"]
+    },
+    {
+      "title": "Piña, froita de tempada e froitos secos",
+      "ingredients": ["piña", "froita", "froitos secos"]
+    },
+    {
+      "title": "Mexillóns con espárrajos verdes á prancha",
+      "ingredients": ["mexillóns", "espárrajos"]
+    },
+    {
+      "title": "Tomate con ovo e bonito",
+      "ingredients": ["tomate", "ovo", "bonito"]
+    }
+  ]
+}

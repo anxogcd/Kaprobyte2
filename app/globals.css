@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  /* O teu verde base */
+  --color-nm-bg: #dce8dc;
+
+  /* SOMBRA ESCURA: O segredo é baixar a luminosidade e saturar un pouco o verde */
+  /* #b9cbb9 é un ton oliva cinza que simula a ausencia de luz sobre o matcha */
+  --color-nm-dark: #b9cbb9;
+
+  /* SOMBRA CLARA: Un branco cunha lixeira pinga de verde para que non pareza artificial */
+  --color-nm-light: #f4faf4;
+
+  /* Variables de sombra para uso directo */
+  --shadow-nm-flat:
+    10px 10px 20px var(--color-nm-dark), -10px -10px 20px var(--color-nm-light);
+  --shadow-nm-inset:
+    inset 6px 6px 12px var(--color-nm-dark),
+    inset -6px -6px 12px var(--color-nm-light);
+}
+
+/* Re-definición das utilidades para usar estas novas cores */
+@utility nm-flat {
+  background-color: var(--color-nm-bg);
+  box-shadow: var(--shadow-nm-flat);
+}
+
+@utility nm-inset {
+  background-color: var(--color-nm-bg);
+  box-shadow: var(--shadow-nm-inset);
+}
+
+@utility nm-button {
+  background-color: var(--color-nm-bg);
+  box-shadow:
+    6px 6px 12px var(--color-nm-dark),
+    -6px -6px 12px var(--color-nm-light);
+  transition: all 0.2s ease;
+
+  &:active {
+    box-shadow: var(--shadow-nm-inset);
+    transform: scale(0.98);
+  }
+}
