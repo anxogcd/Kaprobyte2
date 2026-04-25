@@ -35,15 +35,23 @@ export default function RootLayout({
             <nav className="nm-flat rounded-2xl px-8 h-20 flex items-center justify-between">
               {/* Menú - Texto en verde escuro para coherencia */}
               <ul className="flex gap-6 text-sm font-bold text-slate-700">
-                <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
-                  <a href="/">Inisio</a>
-                </li>
-                <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
-                  <a href="/froitas">Froitas</a>
-                </li>
-                <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
-                  <a href="/peixes">Peixes</a>
-                </li>
+                <a href="/">
+                  <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
+                    Inisio
+                  </li>
+                </a>
+
+                <a href="/froitas">
+                  <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
+                    Froitas
+                  </li>
+                </a>
+
+                <a href="/peixes">
+                  <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
+                    Peixes
+                  </li>
+                </a>
               </ul>
 
               {/* Logo con laranxa para contraste e o gris verdoso profundo */}
