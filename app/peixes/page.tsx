@@ -126,17 +126,17 @@ export default function SeasonalFish() {
               Tempada Local
             </span>
             <h3 className="text-3xl font-black text-slate-800">
-              Peixes de <span className="text-green-700">{name}</span>
+              Peixes de <span className="text-green-700">{name}</span> 🌊
             </h3>
             <p className="text-slate-500 mt-2 text-sm font-medium">
-              Consumir o que toca é máis san e sostible.
+              Alá polo San Xoan a sardiña molla o pan.
             </p>
           </div>
           <div className="flex flex-col gap-8 max-w-md ml-auto">
             {/* SECCIÓN PEIXE AZUL */}
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-blue-500/70 text-right pr-2">
-                Peixe Azul
+                Peixe Azul 🐟
               </span>
               <div className="flex flex-wrap justify-center md:justify-end gap-3">
                 {blue.map((item) => (
@@ -155,7 +155,7 @@ export default function SeasonalFish() {
             {/* SECCIÓN PEIXE BRANCO */}
             <div className="flex flex-col gap-3">
               <span className="text-xs font-black uppercase tracking-widest text-slate-400 text-right pr-2">
-                Peixe Branco
+                Peixe Branco 🐡
               </span>
               <div className="flex flex-wrap justify-center md:justify-end gap-3">
                 {white.map((item) => (

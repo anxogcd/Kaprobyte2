@@ -1,112 +1,114 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const FRUITS_BY_MONTH = {
+const VEGETABLES_BY_MONTH = {
   0: {
     name: "Xaneiro",
     items: [
-      "Laranxa",
-      "Mandarina",
-      "Kiwi",
-      "Masá",
-      "Limón",
-      "Pomelo",
-      "Ajuacate",
+      "Jrelo",
+      "Nabisa",
+      "Repolo",
+      "Porro",
+      "Senoria",
+      "Brócoli",
+      "Coliflor",
     ],
   },
   1: {
     name: "Febreiro",
-    items: ["Kiwi", "Laranxa", "Mandarina", "Pera", "Masá", "Ajuacate"],
+    items: ["Jrelo", "Nabisa", "Repolo", "Coliflor", "Espinaca", "Allo"],
   },
   2: {
-    name: "Marzo",
-    items: ["Amorodo", "Kiwi", "Laranxa", "Limón", "Níspero"],
+    name: "Marso",
+    items: ["Jrelo", "Espinaca", "Leituja", "Nabisa", "Porro"],
   },
   3: {
     name: "Abril",
-    items: ["Amorodo", "Níspero", "Pera", "Plátano", "Laranxa"],
+    items: [
+      "Chícharo",
+      "Sebola nova",
+      "Leituja",
+      "Espinaca",
+      "Espárrajo",
+      "Remolacha",
+    ],
   },
   4: {
     name: "Maio",
     items: [
-      "Amorodo",
-      "Sereixa",
-      "Albaricoque",
-      "Nectarina",
-      "Ameixa",
-      "Níspero",
+      "Chícharo",
+      "Xudía",
+      "Leituja",
+      "Senoria",
+      "Repolo de verán",
+      "Sebola nova",
     ],
   },
   5: {
     name: "Xuño",
     items: [
-      "Sereixa",
-      "Pexejo",
-      "Sandía",
-      "Melón",
-      "Framboesa",
-      "Arando",
-      "Amora",
+      "Pemento de Padrón",
+      "Xudía",
+      "Cabasiña",
+      "Cojombro",
+      "Senoria",
+      "Leituja",
     ],
   },
   6: {
     name: "Xullo",
     items: [
-      "Pexejo",
-      "Nectarina",
-      "Ameixa",
-      "Melón",
-      "Sandía",
-      "Arando",
-      "Pera de verán",
+      "Pemento de Padrón",
+      "Tomate",
+      "Xudía",
+      "Cabasiña",
+      "Cojombro",
+      "Pemento vermello",
     ],
   },
   7: {
-    name: "Agosto",
+    name: "Ajosto",
     items: [
-      "Fijo",
-      "Uva",
-      "Pexejo",
-      "Pera",
-      "Melón",
-      "Sandía",
-      "Arando",
-      "Ameixa",
+      "Tomate",
+      "Pemento de Padrón",
+      "Berenxena",
+      "Sebola",
+      "Cabasa",
+      "Xudía",
     ],
   },
   8: {
     name: "Setembro",
-    items: ["Uva", "Masá", "Pera", "Fijo", "Marmelo", "Kiwi", "Jranada"],
+    items: [
+      "Tomate",
+      "Pemento de Padrón",
+      "Cabasa",
+      "Pemento de Mouján",
+      "Cabasiña",
+      "Sebola",
+    ],
   },
   9: {
     name: "Outubro",
-    items: [
-      "Castaña",
-      "Masá",
-      "Uva",
-      "Marmelo",
-      "Caqui",
-      "Jranada",
-      "Mandarina",
-    ],
+    items: ["Cabasa", "Nabisa", "Senoria", "Porro", "Repolo", "Berenxena"],
   },
   10: {
     name: "Novembro",
-    items: [
-      "Castaña",
-      "Mandarina",
-      "Laranxa",
-      "Caqui",
-      "Kiwi",
-      "Chirimoya",
-      "Ajuacate",
-    ],
+    items: ["Nabisa", "Repolo", "Coliflor", "Porro", "Castaña", "Cabasa"],
   },
   11: {
     name: "Decembro",
-    items: ["Laranxa", "Mandarina", "Kiwi", "Masá", "Uva", "Piña", "Ajuacate"],
+    items: [
+      "Nabisa",
+      "Jrelo temperán",
+      "Repolo",
+      "Brócoli",
+      "Porro",
+      "Coliflor",
+    ],
   },
 };
+
 export default function SeasonalFruit() {
   const [currentMonth, setCurrentMonth] = useState<number | null>(null);
 
@@ -117,7 +119,7 @@ export default function SeasonalFruit() {
   if (currentMonth === null) return null;
 
   const { name, items } =
-    FRUITS_BY_MONTH[currentMonth as keyof typeof FRUITS_BY_MONTH];
+    VEGETABLES_BY_MONTH[currentMonth as keyof typeof VEGETABLES_BY_MONTH];
 
   return (
     <div className="mt-12 w-full max-w-4xl mx-auto">
@@ -129,22 +131,22 @@ export default function SeasonalFruit() {
               Tempada Local
             </span>
             <h3 className="text-3xl font-black text-slate-800">
-              Froitas de <span className="text-green-700">{name}</span> 🍎
+              Verduras de <span className="text-green-700">{name}</span> 🥬
             </h3>
             <p className="text-slate-500 mt-2 text-sm font-medium">
-              Teño o mal da sereixa, eu quero pero o corpo non me deixa.
+              Arrós con chícharos, patacas novas...
             </p>
           </div>
 
           {/* Lista de Froitas Neumórfica */}
           <div className="flex flex-wrap justify-center md:justify-end gap-3 max-w-md">
-            {items.map((fruit) => (
+            {items.map((vegetable) => (
               <div
-                key={fruit}
+                key={vegetable}
                 className="nm-inset px-5 py-3 rounded-2xl text-slate-700 font-bold text-sm flex items-center gap-2"
               >
                 <span className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.8)]" />
-                {fruit}
+                {vegetable}
               </div>
             ))}
           </div>
