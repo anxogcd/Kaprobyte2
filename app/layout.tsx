@@ -9,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Kaprobyte",
-  description: "Planificador de menús personalizados",
+  description: "Planificador de menús personalisados",
 };
 
 export default function RootLayout({
@@ -30,6 +30,12 @@ export default function RootLayout({
                 <a href="/">
                   <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
                     Inisio
+                  </li>
+                </a>
+
+                <a href="/planificador">
+                  <li className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all">
+                    Planificador
                   </li>
                 </a>
 
