@@ -1,51 +1,102 @@
-import RandomMenuSection from "./random-menu/randomMenuSection";
+"use client";
+import menuData from "@/app/data/menus.json";
+import { useEffect, useState } from "react";
 
-export default function LandingKaprobyte() {
+export default function RandomMenuSection() {
+  const [seleccion, setSeleccion] = useState({
+    comida: { title: "", ingredients: [] as string[] },
+    cena: { title: "", ingredients: [] as string[] },
+  });
+
+  const obtenerNuevoMenu = () => {
+    const comidas = menuData.comidas;
+    const cenas = menuData.cenas;
+
+    const comidaAleatoria = comidas[Math.floor(Math.random() * comidas.length)];
+    const cenaAleatoria = cenas[Math.floor(Math.random() * cenas.length)];
+
+    setSeleccion({
+      comida: comidaAleatoria,
+      cena: cenaAleatoria,
+    });
+  };
+
+  useEffect(() => {
+    obtenerNuevoMenu();
+  }, []);
+
   return (
-    /* Cambiamos o bg ao noso novo verde salvia definido no CSS */
-    <div className="min-h-screen bg-nm-bg text-slate-800 font-sans p-4">
-      {/* --- HEADER / NAVBAR --- */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50">
-        {/* Engadimos nm-flat para que o nav destaque sobre o fondo */}
-        <nav className="nm-flat rounded-2xl px-8 h-20 flex items-center justify-between">
-          {/* Menú - Texto en verde escuro para coherencia */}
-          <ul className="flex gap-6 text-sm font-bold text-slate-700">
-            {["Inicio", "Cómo funciona", "Nutrición"].map((item) => (
-              <li
-                key={item}
-                className="nm-button px-4 py-2 rounded-xl cursor-pointer hover:text-green-600 transition-all"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          {/* Logo con laranxa para contraste e o gris verdoso profundo */}
-          <div className="text-2xl font-black tracking-tighter text-slate-900 drop-shadow-sm">
-            KAPRO<span className="text-orange-500">BYTE</span>
-          </div>
-        </nav>
-      </header>
-
-      <main className="pt-32 pb-10">
-        {/* O contenedor principal agora usa o verde de fondo e o relevo inset */}
-        <div className="max-w-7xl mx-auto nm-inset rounded-[3rem] p-8 min-h-[60vh] border-none">
-          <RandomMenuSection />
-        </div>
-      </main>
-
-      {/* --- FOOTER --- */}
-      <footer className="max-w-7xl mx-auto mb-8">
-        {/* Engadimos nm-flat ao footer para pechar o deseño con coherencia */}
-        <div className="nm-flat rounded-2xl py-10 text-center">
-          <p className="font-medium text-slate-600">
-            © 2024 <span className="text-orange-600 font-bold">Kaprobyte</span>.
-            <span className="italic ml-2 text-slate-500">
-              O teu benestar, o noso rollito.
-            </span>
+    <section className="py-12">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-black text-slate-800 mb-4 tracking-tight">
+            Suxerensia do día
+          </h2>
+          <p className="text-slate-500 font-medium">
+            Baseada no teu plan nutrisional de{" "}
+            <span className="text-green-600">Kaprobyte</span>
           </p>
         </div>
-      </footer>
-    </div>
+
+        <div className="grid md:grid-cols-2 gap-12 mb-16">
+          {/* Card Comida */}
+          <div className="nm-flat p-8 rounded-[2.5rem] flex flex-col h-full">
+            <div className="mb-6">
+              <span className="nm-inset text-green-600 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+                Xantar
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-6 min-h-14">
+              {seleccion.comida.title}
+            </h3>
+            <div className="flex flex-wrap gap-3 mt-auto">
+              {seleccion.comida.ingredients.map((ing, i) => (
+                <span
+                  key={i}
+                  className="nm-flat text-xs font-semibold text-slate-500 px-4 py-2 rounded-xl"
+                >
+                  {ing}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Card Cena */}
+          <div className="nm-flat p-8 rounded-[2.5rem] flex flex-col h-full">
+            <div className="mb-6">
+              <span className="nm-inset text-green-600 text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+                Sena
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-slate-800 mb-6 min-h-14">
+              {seleccion.cena.title}
+            </h3>
+            <div className="flex flex-wrap gap-3 mt-auto">
+              {seleccion.cena.ingredients.map((ing, i) => (
+                <span
+                  key={i}
+                  className="nm-flat text-xs font-semibold text-slate-500 px-4 py-2 rounded-xl"
+                >
+                  {ing}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Botón Principal Neumórfico */}
+        <div className="flex justify-center">
+          <button
+            onClick={obtenerNuevoMenu}
+            className="nm-button group flex items-center gap-4 px-12 py-5 rounded-2xl font-bold text-slate-700 hover:text-green-600"
+          >
+            <span className="text-2xl group-active:rotate-180 transition-transform duration-500">
+              🔄
+            </span>
+            <span className="tracking-wide">Propoñer outro menú</span>
+          </button>
+        </div>
+      </div>
+    </section>
   );
 }
