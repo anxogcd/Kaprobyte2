@@ -170,8 +170,9 @@ export default function RandomMenuSection({
           <p className="text-slate-500 font-medium">
             Suxerensias personalisadas con todo do millor para{" "}
             <span className="font-bold capitalize text-green-600">
-              {usuario}
-            </span>
+              {usuario}.
+            </span>{" "}
+            Se non che molan, dáñe outra ves ao botón!
           </p>
         </div>
 
