@@ -27,9 +27,9 @@ export default function Home() {
   // --- PANTALLA DE LOGIN ---
   if (!usuario) {
     return (
-      <main className="min-h-screen flex items-center justify-center p-6">
+      <main className="lg:min-h-screen flex items-center justify-center p-6">
         <div className="nm-flat p-10 rounded-[2.5rem] max-w-md w-full text-center">
-          <h1 className="text-3xl font-black text-slate-800 mb-8">
+          <h1 className="text-2xl font-black text-slate-800 mb-8">
             Benvido! 👋
           </h1>
 
@@ -90,7 +90,7 @@ export default function Home() {
   return (
     <main className="min-h-screen relative pb-20">
       {/* Barra superior con usuario y botón de salir */}
-      <div className="absolute top-6 right-6 flex items-center gap-4 bg-green-100 px-5 py-2 rounded-2xl shadow-sm border border-green-100">
+      <div className="absolute top-6 right-6 flex items-center gap-4 bg-green-100 px-5 py-2 rounded-xl shadow-sm border border-green-100">
         <span className="font-bold text-slate-600 capitalize">
           👤 {usuario}
         </span>

@@ -164,7 +164,7 @@ export default function RandomMenuSection({
     <section className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-slate-800 mb-4 tracking-tight">
+          <h2 className="text-2xl font-black text-slate-800 mb-4 tracking-tight">
             Planificasión Semanal (5 días)
           </h2>
           <p className="text-slate-500 font-medium">
@@ -188,7 +188,7 @@ export default function RandomMenuSection({
                 <div
                   key={idx}
                   onClick={() => togglePrato(item.title)}
-                  className={`nm-flat p-6 rounded-4xl transition-all duration-300 ${
+                  className={`nm-flat p-6 rounded-2xl transition-all duration-300 ${
                     usuario === "anxo" ? "cursor-pointer select-none" : ""
                   } ${pratoMarcado ? "ring-2 ring-orange-500 bg-orange-500/5 opacity-80" : ""}`}
                 >
@@ -227,7 +227,7 @@ export default function RandomMenuSection({
                 <div
                   key={idx}
                   onClick={() => togglePrato(item.title)}
-                  className={`nm-flat p-6 rounded-4xl transition-all duration-300 ${
+                  className={`nm-flat p-6 rounded-2xl transition-all duration-300 ${
                     usuario === "anxo" ? "cursor-pointer select-none" : ""
                   } ${pratoMarcado ? "ring-2 ring-orange-500 bg-orange-500/5 opacity-80" : ""}`}
                 >
@@ -259,10 +259,10 @@ export default function RandomMenuSection({
         {/* LISTA DA COMPRA */}
         <div className="nm-inset p-8 rounded-[2.5rem] mb-12">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
-            <h3 className="text-2xl font-bold text-slate-800 flex items-center gap-3">
+            <h3 className="text-xl font-bold text-slate-800 flex items-center gap-3">
               🛒 Lista da compra
             </h3>
-            <div className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-2xl">
+            <div className="flex items-center gap-2 bg-white/50 px-4 py-2 rounded-xl">
               <span className="text-sm font-bold text-slate-500 uppercase tracking-wider">
                 Total:
               </span>
@@ -304,9 +304,9 @@ export default function RandomMenuSection({
         <div className="flex justify-center">
           <button
             onClick={generarYGuardarNuevoMenu}
-            className="nm-button group flex items-center gap-4 px-12 py-5 rounded-2xl font-bold text-slate-700 hover:text-green-600 transition-all"
+            className="nm-button group flex items-center gap-4 px-12 py-5 rounded-xl font-bold text-slate-700 hover:text-green-600 transition-all"
           >
-            <span className="text-2xl group-active:rotate-180 transition-transform duration-500">
+            <span className="text-xl group-active:rotate-180 transition-transform duration-500">
               🔄
             </span>
             <span className="tracking-wide">Xerar nova semana</span>

@@ -33,7 +33,7 @@ export default function RootLayout({
 
           {/* --- FOOTER --- */}
           <footer className="max-w-7xl mx-auto mb-8">
-            <div className="nm-flat rounded-2xl py-10 text-center px-4">
+            <div className="nm-flat rounded-xl py-10 text-center px-4">
               <p className="font-medium text-slate-600">
                 © 2026{" "}
                 <span className="text-orange-600 font-bold">Kaprobyte</span>.

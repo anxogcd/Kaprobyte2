@@ -120,7 +120,7 @@ export default function SeasonalFruit() {
     FRUITS_BY_MONTH[currentMonth as keyof typeof FRUITS_BY_MONTH];
 
   return (
-    <div className="mt-12 w-full max-w-4xl mx-auto">
+    <div className="mt-12 w-full max-w-2xl mx-auto">
       <div className="nm-flat rounded-[2.5rem] p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Título e Mes */}
@@ -128,7 +128,7 @@ export default function SeasonalFruit() {
             <span className="text-orange-600 font-black text-xs uppercase tracking-[0.2em] mb-2 block">
               Tempada Local
             </span>
-            <h3 className="text-3xl font-black text-slate-800">
+            <h3 className="text-2xl font-black text-slate-800">
               Froitas de <span className="text-green-700">{name}</span> 🍎
             </h3>
             <p className="text-slate-500 mt-2 text-sm font-medium">
@@ -141,7 +141,7 @@ export default function SeasonalFruit() {
             {items.map((fruit) => (
               <div
                 key={fruit}
-                className="nm-inset px-5 py-3 rounded-2xl text-slate-700 font-bold text-sm flex items-center gap-2"
+                className="nm-inset px-5 py-3 rounded-xl text-slate-700 font-bold text-sm flex items-center gap-2"
               >
                 <span className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.8)]" />
                 {fruit}

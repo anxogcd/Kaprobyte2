@@ -16,9 +16,9 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-50">
-      <nav className="nm-flat rounded-2xl px-6 md:px-8 h-20 flex items-center justify-between relative">
+      <nav className="nm-flat rounded-xl px-6 md:px-8 h-20 flex items-center justify-between relative">
         {/* Logo (Alineado a la izquierda en móvil, mantiene su estilo) */}
-        <div className="text-2xl font-black tracking-tighter text-slate-900 drop-shadow-sm">
+        <div className="text-xl font-black tracking-tighter text-slate-900 drop-shadow-sm">
           KAPRO<span className="text-orange-500">BYTE</span>
         </div>
 
@@ -69,7 +69,7 @@ export default function Navbar() {
 
       {/* Menú Desplegable para Móviles */}
       {isOpen && (
-        <div className="absolute top-24 left-0 w-full nm-flat rounded-2xl p-4 md:hidden flex flex-col gap-3 text-center origin-top animate-in fade-in slide-in-from-top-4">
+        <div className="absolute top-24 left-0 w-full nm-flat rounded-xl p-4 md:hidden flex flex-col gap-3 text-center origin-top animate-in fade-in slide-in-from-top-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}

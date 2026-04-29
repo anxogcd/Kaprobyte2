@@ -117,7 +117,7 @@ export default function SeasonalFish() {
     SEAFOOD_BY_MONTH[currentMonth as keyof typeof SEAFOOD_BY_MONTH];
 
   return (
-    <div className="mt-12 w-full max-w-4xl mx-auto">
+    <div className="mt-12 w-full max-w-2xl mx-auto">
       <div className="nm-flat rounded-[2.5rem] p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Título e Mes */}
@@ -125,7 +125,7 @@ export default function SeasonalFish() {
             <span className="text-orange-600 font-black text-xs uppercase tracking-[0.2em] mb-2 block">
               Tempada Local
             </span>
-            <h3 className="text-3xl font-black text-slate-800">
+            <h3 className="text-2xl font-black text-slate-800">
               Peixes de <span className="text-green-700">{name}</span> 🌊
             </h3>
             <p className="text-slate-500 mt-2 text-sm font-medium">
@@ -142,7 +142,7 @@ export default function SeasonalFish() {
                 {blue.map((item) => (
                   <div
                     key={item}
-                    className="nm-inset px-5 py-3 rounded-2xl text-slate-700 font-bold text-sm flex items-center gap-2"
+                    className="nm-inset px-5 py-3 rounded-xl text-slate-700 font-bold text-sm flex items-center gap-2"
                   >
                     {/* Punto azul eléctrico para o peixe azul */}
                     <span className="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]" />
@@ -161,7 +161,7 @@ export default function SeasonalFish() {
                 {white.map((item) => (
                   <div
                     key={item}
-                    className="nm-inset px-5 py-3 rounded-2xl text-slate-600 font-bold text-sm flex items-center gap-2"
+                    className="nm-inset px-5 py-3 rounded-xl text-slate-600 font-bold text-sm flex items-center gap-2"
                   >
                     {/* Punto branco/prata con brillo suave para o peixe branco */}
                     <span className="w-2 h-2 bg-slate-200 rounded-full shadow-[0_0_8px_rgba(226,232,240,1)] border border-slate-300" />

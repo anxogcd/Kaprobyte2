@@ -29,7 +29,7 @@ export default function RandomMenuSection() {
     <section className="py-12">
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-slate-800 mb-4 tracking-tight">
+          <h2 className="text-2xl font-black text-slate-800 mb-4 tracking-tight">
             Suxerensia do día
           </h2>
           <p className="text-slate-500 font-medium">
@@ -46,7 +46,7 @@ export default function RandomMenuSection() {
                 Xantar
               </span>
             </div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-6 min-h-14">
+            <h3 className="text-xl font-bold text-slate-800 mb-6 min-h-14">
               {seleccion.comida.title}
             </h3>
             <div className="flex flex-wrap gap-3 mt-auto">
@@ -68,7 +68,7 @@ export default function RandomMenuSection() {
                 Sena
               </span>
             </div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-6 min-h-14">
+            <h3 className="text-xl font-bold text-slate-800 mb-6 min-h-14">
               {seleccion.cena.title}
             </h3>
             <div className="flex flex-wrap gap-3 mt-auto">
@@ -88,9 +88,9 @@ export default function RandomMenuSection() {
         <div className="flex justify-center">
           <button
             onClick={obtenerNuevoMenu}
-            className="nm-button group flex items-center gap-4 px-12 py-5 rounded-2xl font-bold text-slate-700 hover:text-green-600"
+            className="nm-button group flex items-center gap-4 px-12 py-5 rounded-xl font-bold text-slate-700 hover:text-green-600"
           >
-            <span className="text-2xl group-active:rotate-180 transition-transform duration-500">
+            <span className="text-xl group-active:rotate-180 transition-transform duration-500">
               🔄
             </span>
             <span className="tracking-wide">Propoñer outro menú</span>
