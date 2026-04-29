@@ -10,7 +10,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Kaprobyte",
-  description: "Planificador de menús personalizados",
+  description: "Planificador de menús personalisados",
 };
 
 export default function RootLayout({
